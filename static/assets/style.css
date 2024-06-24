@@ -63,3 +63,21 @@
 .dropdown:hover .dropdown-content {
     display: block; /* Show dropdown content on hover */
 }
+
+/* Hide horizontal scrollbar */
+.carousel {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Position the carousel container relative */
+.carousel-container {
+    position: relative;
+}
+
+/* Position the arrows absolutely within the container */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

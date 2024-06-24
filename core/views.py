@@ -83,11 +83,12 @@ def add_to_list(request):
         if created:
             response_data = {'status': 'success', 'message': 'Added ✓'}
         else:
-            response_data = {'status': 'info', 'message': 'Movie already in list'}
+            # If movie already in list, remove it
+            movie_list.delete()
+            response_data = {'status': 'info', 'message': 'Add to List'}
 
         return JsonResponse(response_data)
     else:
-        # return error
         return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
 
 
